@@ -18,11 +18,14 @@ client.login(process.env.CLIENT_TOKEN);
 
 client.on('messageCreate', msg => {
 
-    const prefijoComando = '!'; // Puedes ajustar esto según tu preferencia
+    const prefijoComando = '!';
     if (!msg.content.startsWith(prefijoComando)) return;
 
-    // You can view the msg object here with console.log(msg)
-    if (msg.content === '!Hello') {
-        msg.reply(`Hello ${msg.author.username}`);
+    switch (msg.content.toLowerCase()) {
+        case '!hello':
+            msg.reply(`Hello ${msg.author.username}, have a good day!`);
+            break;
+        default:
+            msg.reply(`Sorry the command "${msg.content}" didn't exist.`)
     }
 });

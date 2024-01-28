@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const axios = require('axios');
 const { Client, GatewayIntentBits } = require("discord.js");
 const client = new Client({
     intents: [
@@ -16,8 +17,7 @@ client.on("ready", () => {
 
 client.login(process.env.CLIENT_TOKEN);
 
-client.on('messageCreate', msg => {
-
+client.on('messageCreate', async(msg) => {
     const prefijoComando = '!';
     if (!msg.content.startsWith(prefijoComando)) return;
 
@@ -25,7 +25,18 @@ client.on('messageCreate', msg => {
         case '!hello':
             msg.reply(`Hello ${msg.author.username}, have a good day!`);
             break;
+        case "!meme":
+            msg.channel.send("Here's your meme!");
+            const img = await getMeme();
+            console.log(img);
+            msg.channel.send(img);
+            break;
         default:
             msg.reply(`Sorry the command "${msg.content}" didn't exist.`)
     }
 });
+
+async function getMeme() {
+    const res = await axios.get("https://meme-api.com/gimme");
+    return res.data.url;
+}

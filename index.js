@@ -27,9 +27,8 @@ client.on('messageCreate', async(msg) => {
             break;
         case "!meme":
             msg.channel.send("Here's your meme!");
-            const img = await getMeme();
-            console.log(img);
-            msg.channel.send(img);
+            const imgMeme = await getMeme();
+            msg.channel.send(imgMeme);
             break;
         default:
             msg.reply(`Sorry the command "${msg.content}" didn't exist.`)
@@ -37,6 +36,11 @@ client.on('messageCreate', async(msg) => {
 });
 
 async function getMeme() {
-    const res = await axios.get("https://meme-api.com/gimme");
-    return res.data.url;
+    try {
+        const response = await axios.get("https://meme-api.com/gimme");
+        return response.data.url;
+    } catch (error) {
+        console.error('Error al obtener el meme:', error.message);
+        throw error;
+    }
 }

@@ -1,6 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
 
-export class HttpClient {
+class HttpClient {
     async get(url) {
         try {
             const response = await axios.get(url);
@@ -11,3 +11,5 @@ export class HttpClient {
         }
     }
 }
+
+module.exports = { HttpClient };

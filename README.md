@@ -18,14 +18,16 @@
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
+  <a href="#credits">Credits</a> 
+  <!--•
   <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="#license">License</a>-->
 </p>
 
 <!--Keys Feautures and Comands-->
 ## Key Features
 * Send messages depending on different commands.
+* Sending different images.
 
 <!--List Comands-->
 ### Comands 
@@ -36,12 +38,18 @@
       <th>Description</th>
       <th>Exit Message</th>
     </tr>
-    <!--Comand !Hello-->
+    <!--Comand !hello-->
     <tr>
-      <td>!Hello</td>
+      <td>!hello</td>
       <td>Say hello and answer with my name</td>
       <td>Hello [author_username]</td>
     </tr>
+    <!--Comand !Hello-->
+      <tr>
+        <td>!meme</td>
+        <td>Send a random meme as a message</td>
+        <td>Here's your meme! [image_meme]</td>
+      </tr>
 </table>
 
 <!--Guide to using the Bot-->
@@ -69,7 +77,7 @@ $ node index.js
 
 <!--Latest Version-->
 ## Download
-You can [download](https://github.com/JosueRenteria/LunaBot-Discord/releases/tag/v.1.0.0) the latest installable version of tht Luna Bot for Windows, macOS and Linux.
+You can [download](https://github.com/JosueRenteria/LunaBot-Discord/releases/tag/v.2.0.0) the latest installable version of tht Luna Bot for Windows, macOS and Linux.
 
 <!--Credits-->
 ## Credits
@@ -77,3 +85,4 @@ This software uses the following open source packages:
 
 - [Node.js](https://nodejs.org/)
 - [Discord.js](https://www.npmjs.com/package/discord.js/v/13.0.0-dev.fdad14099779e61cb84dcd1cb2497e0e853a6144)
+- [Axios.js](https://axios-http.com/docs/intro)

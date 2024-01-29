@@ -1,6 +1,6 @@
-import { HttpClient } from "./Services";
+const { HttpClient } = require("./HttpClient");
 
-export class ImagesService {
+class ImagesService {
     constructor() {
         this.http = new HttpClient();
     }
@@ -8,10 +8,12 @@ export class ImagesService {
     async getMemes() {
         try {
             const response = await this.http.get("https://meme-api.com/gimme");
-            return response.data.url;
+            return response.url;
         } catch (error) {
             console.error('Error al obtener los memes:', error.message);
             throw error;
         }
     }
 }
+
+module.exports = { ImagesService };

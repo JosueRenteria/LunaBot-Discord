@@ -1,6 +1,7 @@
 require("dotenv").config();
 
-const axios = require('axios');
+const { ImagesService } = require("./services/Services");
+
 const { Client, GatewayIntentBits } = require("discord.js");
 const client = new Client({
     intents: [
@@ -16,6 +17,7 @@ client.on("ready", () => {
 });
 
 client.login(process.env.CLIENT_TOKEN);
+const imagesService = new ImagesService();
 
 client.on('messageCreate', async(msg) => {
     const prefijoComando = '!';
@@ -27,20 +29,10 @@ client.on('messageCreate', async(msg) => {
             break;
         case "!meme":
             msg.channel.send("Here's your meme!");
-            const imgMeme = await getMeme();
+            const imgMeme = await imagesService.getMemes();
             msg.channel.send(imgMeme);
             break;
         default:
             msg.reply(`Sorry the command "${msg.content}" didn't exist.`)
     }
 });
-
-async function getMeme() {
-    try {
-        const response = await axios.get("https://meme-api.com/gimme");
-        return response.data.url;
-    } catch (error) {
-        console.error('Error al obtener el meme:', error.message);
-        throw error;
-    }
-}

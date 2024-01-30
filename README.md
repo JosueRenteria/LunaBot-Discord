@@ -28,6 +28,7 @@
 ## Key Features
 * Send messages depending on different commands.
 * Sending different images.
+* Current Day Shipping.
 
 <!--List Comands-->
 ### Comands 
@@ -44,12 +45,18 @@
       <td>Say hello and answer with my name</td>
       <td>Hello [author_username]</td>
     </tr>
-    <!--Comand !Hello-->
+    <!--Comand !meme-->
       <tr>
         <td>!meme</td>
         <td>Send a random meme as a message</td>
         <td>Here's your meme! [image_meme]</td>
       </tr>
+    <!--Comand !day-->
+        <tr>
+          <td>!day</td>
+          <td>Send the current day</td>
+          <td>Hello today is [day_format_of_today]</td>
+        </tr>
 </table>
 
 <!--Guide to using the Bot-->
@@ -77,7 +84,7 @@ $ node index.js
 
 <!--Latest Version-->
 ## Download
-You can [download](https://github.com/JosueRenteria/LunaBot-Discord/releases/tag/v.2.0.0) the latest installable version of tht Luna Bot for Windows, macOS and Linux.
+You can [download](https://github.com/JosueRenteria/LunaBot-Discord/releases/tag/v.3.0.0) the latest installable version of tht Luna Bot for Windows, macOS and Linux.
 
 <!--Credits-->
 ## Credits
@@ -86,3 +93,4 @@ This software uses the following open source packages:
 - [Node.js](https://nodejs.org/)
 - [Discord.js](https://www.npmjs.com/package/discord.js/v/13.0.0-dev.fdad14099779e61cb84dcd1cb2497e0e853a6144)
 - [Axios.js](https://axios-http.com/docs/intro)
+- [Day.js](https://day.js.org/en/)

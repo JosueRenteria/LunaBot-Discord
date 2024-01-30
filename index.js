@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const { ImagesService } = require("./services/Services");
 
+const dayjs = require('dayjs')
+
 const { Client, GatewayIntentBits } = require("discord.js");
 const client = new Client({
     intents: [
@@ -31,6 +33,9 @@ client.on('messageCreate', async(msg) => {
             msg.channel.send("Here's your meme!");
             const imgMeme = await imagesService.getMemes();
             msg.channel.send(imgMeme);
+            break;
+        case '!day':
+            msg.reply(`Hello today is ${dayjs().format("DD-MMMM-YYYY")}`);
             break;
         default:
             msg.reply(`Sorry the command "${msg.content}" didn't exist.`)

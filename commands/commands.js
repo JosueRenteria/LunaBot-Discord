@@ -1,4 +1,4 @@
-const ImagesService = require("./services");
+const ImagesService = require("../services/Services");
 const dayjs = require('dayjs')
 
 const imagesService = new ImagesService();
@@ -8,6 +8,8 @@ const helloCommand = (msg) => {
 };
 
 const memeCommand = async(msg) => {
+    const imagesService = new ImagesService();
+
     msg.channel.send("Here's your meme!");
     const imgMeme = await imagesService.getMemes();
     msg.channel.send(imgMeme);

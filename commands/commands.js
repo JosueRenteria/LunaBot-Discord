@@ -9,10 +9,15 @@ const helloCommand = (msg) => {
 
 const memeCommand = async(msg) => {
     const imagesService = new ImagesService();
-
     msg.channel.send("Here's your meme!");
-    const imgMeme = await imagesService.getMemes();
-    msg.channel.send(imgMeme);
+
+    try {
+        const imgMeme = await imagesService.getMemes();
+        msg.channel.send(imgMeme);
+    } catch (error) {
+        console.error('Error al obtener los memes:', error.message);
+        throw error;
+    }
 }
 
 const dayCommand = (msg) => {

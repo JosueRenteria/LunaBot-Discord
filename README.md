@@ -26,6 +26,7 @@
 
 <!--Keys Feautures and Comands-->
 ## Key Features
+* Discord Channels with Different Commands.
 * Send messages depending on different commands.
 * Sending different images.
 * Current Day Shipping.
@@ -81,6 +82,17 @@ $ node index.js
 
 > **Note:**
 > If you don't already have a Bot on Discord, please [see this page](https://buddy.works/tutorials/how-to-build-a-discord-bot-in-node-js-for-beginners#part-1-discord-configuration) to see the Bot settings on Discord.
+
+### Tokens Configurations
+
+To be able to use the code, you need to add the Tokens, the Token of the discord server channels and the bot key. These are added in a folder that has to be created with the name `.env`. These are added to the file as follows:
+
+```bash
+CLIENT_TOKEN = 'YOUR_CLIENT_TOKEN'
+
+CHANNEL1_TOKE = 'TOKEN_CHANNEL'
+CHANNEL2_TOKE = 'TOKEN_CHANNEL'
+```
 
 <!--Latest Version-->
 ## Download

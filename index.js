@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const channelsConfig = require("./channels/channels");
 const commands = require("./commands/commands");
 
 const { Client, GatewayIntentBits } = require("discord.js");
@@ -22,8 +23,20 @@ client.on('messageCreate', async(msg) => {
     const prefijoComando = '!';
     if (!msg.content.startsWith(prefijoComando)) return;
 
-    const args = msg.content.slice(prefijoComando.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
+    const channelConfig = channelsConfig[msg.channel.name];
 
-    commands[command](msg);
+    if (channelConfig) {
+        const allowedCommands = channelConfig.allowedCommands || [];
+
+        const args = msg.content.slice(prefijoComando.length).trim().split(/ +/);
+        const command = args.shift().toLowerCase();
+
+        if (allowedCommands.includes(command)) {
+            if (commands.hasOwnProperty(command)) {
+                commands[command](msg);
+            } else {
+                msg.reply(`Sorry, the command "${command}" is not implemented.`);
+            }
+        }
+    }
 });

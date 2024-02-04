@@ -14,6 +14,16 @@ class ImagesService {
             throw error;
         }
     }
+
+    async getDogs() {
+        try {
+            const response = await this.http.get("https://dog.ceo/api/breeds/image/random");
+            return response.message;
+        } catch (error) {
+            console.error('Error al obtener las imagenes de perros:', error.message);
+            throw error;
+        }
+    }
 }
 
 module.exports = ImagesService;

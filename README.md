@@ -30,6 +30,7 @@
 * Send messages depending on different commands.
 * Sending different images.
 * Current Day Shipping.
+* Sending different images of dogs.
 
 <!--List Comands-->
 ### Comands 
@@ -47,17 +48,23 @@
       <td>Hello [author_username]</td>
     </tr>
     <!--Comand !meme-->
-      <tr>
-        <td>!meme</td>
-        <td>Send a random meme as a message</td>
-        <td>Here's your meme! [image_meme]</td>
-      </tr>
+    <tr>
+      <td>!meme</td>
+      <td>Send a random meme as a message</td>
+      <td>Here's your meme! [image_meme]</td>
+    </tr>
     <!--Comand !day-->
-        <tr>
-          <td>!day</td>
-          <td>Send the current day</td>
-          <td>Hello today is [day_format_of_today]</td>
-        </tr>
+    <tr>
+      <td>!day</td>
+      <td>Send the current day</td>
+      <td>Hello today is [day_format_of_today]</td>
+    </tr>
+    <!--Comand !day-->
+    <tr>
+      <td>!dog</td>
+      <td>Send a picture of a random dog as a message</td>
+      <td>Here's your dog! [image_dog]</td>
+    </tr>
 </table>
 
 <!--Guide to using the Bot-->
@@ -96,7 +103,7 @@ CHANNEL2_TOKE = 'TOKEN_CHANNEL'
 
 <!--Latest Version-->
 ## Download
-You can [download](https://github.com/JosueRenteria/LunaBot-Discord/releases/tag/v.3.0.0) the latest installable version of tht Luna Bot for Windows, macOS and Linux.
+You can [download](https://github.com/JosueRenteria/LunaBot-Discord/releases/tag/v.4.0.0) the latest installable version of tht Luna Bot for Windows, macOS and Linux.
 
 <!--Credits-->
 ## Credits

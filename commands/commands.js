@@ -32,7 +32,7 @@ const dogCommand = async(msg) => {
         const imgDog = await imagesService.getDogs();
         msg.channel.send(imgDog);
     } catch (error) {
-        console.error('Error al obtener los memes:', error.message);
+        console.error('Error al obtener los perros:', error.message);
         throw error;
     }
 }

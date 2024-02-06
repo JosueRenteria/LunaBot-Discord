@@ -24,6 +24,17 @@ class ImagesService {
             throw error;
         }
     }
+
+    async getFox() {
+        try {
+            const response = await this.http.get("https://randomfox.ca/floof/");
+            console.log(response.image);
+            return response.image;
+        } catch (error) {
+            console.error('Error al obtener las imagenes de zorros:', error.message);
+            throw error;
+        }
+    }
 }
 
 module.exports = ImagesService;

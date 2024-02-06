@@ -37,9 +37,23 @@ const dogCommand = async(msg) => {
     }
 }
 
+const foxCommand = async(msg) => {
+    const imagesService = new ImagesService();
+    msg.channel.send("Here's your fox!");
+
+    try {
+        const imgFox = await imagesService.getFox();
+        msg.channel.send(imgFox);
+    } catch (error) {
+        console.error('Error al obtener los zorros:', error.message);
+        throw error;
+    }
+}
+
 module.exports = {
     hello: helloCommand,
     meme: memeCommand,
     day: dayCommand,
     dog: dogCommand,
+    fox: foxCommand,
 };

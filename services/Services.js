@@ -28,7 +28,6 @@ class ImagesService {
     async getFox() {
         try {
             const response = await this.http.get("https://randomfox.ca/floof/");
-            console.log(response.image);
             return response.image;
         } catch (error) {
             console.error('Error al obtener las imagenes de zorros:', error.message);

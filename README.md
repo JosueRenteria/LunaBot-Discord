@@ -59,7 +59,7 @@
       <td>Send the current day</td>
       <td>Hello today is [day_format_of_today]</td>
     </tr>
-    <!--Comand !day-->
+    <!--Comand !dog-->
     <tr>
       <td>!dog</td>
       <td>Send a picture of a random dog as a message</td>
